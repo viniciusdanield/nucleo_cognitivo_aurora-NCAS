@@ -1,3 +1,6 @@
+
+
+#falha_critica: false, //mudar alguns para true, para ter anomalias tbm, mas depois de finalizar#
 {
     "modulos": [
         {
@@ -6,29 +9,13 @@
             "setor": "Habitacao",
             "status": "ativo",
             "nivel_importancia": "critico",
-            "consumo": 82,
-            "capacidade": 95,
+            "consumo_percentual": 82,
+            "capacidade_percentual": 95,
             "temperatura": 22,
             "pressao": 101,
-            "integridade": 96,
+            "integridade_percentual": 96,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-15",
-            "responsavel": "Equipe de Suporte Vital"
-        },
-        {
-            "nome": "Reator de Fusao",
-            "categoria": "Energia",
-            "setor": "Setor Energetico",
-            "status": "ativo",
-            "nivel_importancia": "critico",
-            "consumo": 94,
-            "capacidade": 100,
-            "temperatura": 680,
-            "pressao": 87,
-            "integridade": 91,
-            "falha_critica": false,
-            "ultima_manutencao": "2026-08-28",
-            "responsavel": "Engenharia Energetica"
+            "ultima_manutencao": "2026-08-15"
         },
         {
             "nome": "Estacao de Reciclagem",
@@ -36,59 +23,55 @@
             "setor": "Processamento",
             "status": "ativo",
             "nivel_importancia": "alto",
-            "consumo": 63,
-            "capacidade": 78,
+            "consumo_percentual": 63,
+            "capacidade_percentual": 78,
             "temperatura": 31,
             "pressao": 74,
-            "integridade": 88,
+            "integridade_percentual": 88,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-20",
-            "responsavel": "Equipe de Recursos"
+            "ultima_manutencao": "2026-08-20"
         },
         {
-            "nome": "Rede de Comunicacao Orbital",
+            "nome": "Rede de Comunicacao",
             "categoria": "Comunicacao",
             "setor": "Centro de Controle",
             "status": "ativo",
             "nivel_importancia": "alto",
-            "consumo": 41,
-            "capacidade": 89,
+            "consumo_percentual": 41,
+            "capacidade_percentual": 89,
             "temperatura": 27,
-            "pressao": 0,
-            "integridade": 97,
+            "pressao": null,
+            "integridade_percentual": 97,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-12",
-            "responsavel": "Equipe de Comunicacoes"
+            "ultima_manutencao": "2026-08-12"
         },
         {
-            "nome": "Nucleo de Controle Termico",
+            "nome": "Controle Termico",
             "categoria": "Climatizacao",
             "setor": "Infraestrutura",
             "status": "alerta",
             "nivel_importancia": "critico",
-            "consumo": 88,
-            "capacidade": 91,
+            "consumo_percentual": 88,
+            "capacidade_percentual": 91,
             "temperatura": 42,
             "pressao": 69,
-            "integridade": 82,
+            "integridade_percentual": 82,
             "falha_critica": false,
-            "ultima_manutencao": "2026-07-30",
-            "responsavel": "Engenharia de Infraestrutura"
+            "ultima_manutencao": "2026-07-30"
         },
         {
-            "nome": "Laboratorio Xenobiologico",
+            "nome": "Laboratorio",
             "categoria": "Pesquisa",
             "setor": "Cientifico",
             "status": "ativo",
             "nivel_importancia": "medio",
-            "consumo": 52,
-            "capacidade": 64,
+            "consumo_percentual": 52,
+            "capacidade_percentual": 64,
             "temperatura": 24,
             "pressao": 98,
-            "integridade": 94,
+            "integridade_percentual": 94,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-22",
-            "responsavel": "Equipe Cientifica"
+            "ultima_manutencao": "2026-08-22"
         },
         {
             "nome": "Unidade Medica Central",
@@ -96,29 +79,27 @@
             "setor": "Habitacao",
             "status": "ativo",
             "nivel_importancia": "critico",
-            "consumo": 58,
-            "capacidade": 72,
+            "consumo_percentual": 58,
+            "capacidade_percentual": 72,
             "temperatura": 23,
             "pressao": 100,
-            "integridade": 98,
+            "integridade_percentual": 98,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-25",
-            "responsavel": "Equipe Medica"
+            "ultima_manutencao": "2026-08-25"
         },
         {
-            "nome": "Estufa Hidroponica A-07",
+            "nome": "Estufa Agricola",
             "categoria": "Agricultura",
             "setor": "Producao",
             "status": "ativo",
             "nivel_importancia": "alto",
-            "consumo": 76,
-            "capacidade": 84,
+            "consumo_percentual": 76,
+            "capacidade_percentual": 84,
             "temperatura": 25,
             "pressao": 99,
-            "integridade": 93,
+            "integridade_percentual": 93,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-18",
-            "responsavel": "Equipe de Agricultura"
+            "ultima_manutencao": "2026-08-18"
         },
         {
             "nome": "Oficina de Robotica",
@@ -126,14 +107,13 @@
             "setor": "Industrial",
             "status": "manutencao",
             "nivel_importancia": "medio",
-            "consumo": 37,
-            "capacidade": 61,
+            "consumo_percentual": 37,
+            "capacidade_percentual": 61,
             "temperatura": 29,
-            "pressao": 0,
-            "integridade": 76,
+            "pressao": null,
+            "integridade_percentual": 76,
             "falha_critica": false,
-            "ultima_manutencao": "2026-09-01",
-            "responsavel": "Equipe de Robotica"
+            "ultima_manutencao": "2026-09-01"
         },
         {
             "nome": "Nucleo de Inteligencia Operacional",
@@ -141,44 +121,29 @@
             "setor": "Centro de Controle",
             "status": "ativo",
             "nivel_importancia": "critico",
-            "consumo": 34,
-            "capacidade": 92,
+            "consumo_percentual": 34,
+            "capacidade_percentual": 92,
             "temperatura": 36,
-            "pressao": 0,
-            "integridade": 99,
+            "pressao": null,
+            "integridade_percentual": 99,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-29",
-            "responsavel": "Equipe de Sistemas"
+            "ultima_manutencao": "2026-08-29"
         },
         {
-            "nome": "Doca de Veiculos de Exploracao",
+            "nome": "Plataforma de Veiculos de Exploracao",
             "categoria": "Transporte",
             "setor": "Hangar",
             "status": "ativo",
             "nivel_importancia": "alto",
-            "consumo": 29,
-            "capacidade": 67,
+            "consumo_percentual": 29,
+            "capacidade_percentual": 67,
             "temperatura": 21,
             "pressao": 100,
-            "integridade": 89,
+            "integridade_percentual": 89,
             "falha_critica": false,
-            "ultima_manutencao": "2026-08-10",
-            "responsavel": "Equipe de Operacoes"
-        },
-        {
-            "nome": "Central de Monitoramento Perimetral",
-            "categoria": "Seguranca",
-            "setor": "Defesa",
-            "status": "ativo",
-            "nivel_importancia": "critico",
-            "consumo": 47,
-            "capacidade": 86,
-            "temperatura": 26,
-            "pressao": 0,
-            "integridade": 95,
-            "falha_critica": false,
-            "ultima_manutencao": "2026-08-17",
-            "responsavel": "Equipe de Seguranca"
+            "ultima_manutencao": "2026-08-10"
         }
     ]
 }
+
+#alert[]
