@@ -1,6 +1,3 @@
-
-
-#falha_critica: false, //mudar alguns para true, para ter anomalias tbm, mas depois de finalizar#
 {
     "modulos": [
         {
@@ -145,5 +142,3 @@
         }
     ]
 }
-
-#alert[]
