@@ -37,6 +37,30 @@ def registrar_historico(mensagem):
     with open("historico_colonia.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{mensagem}\n")
 
+def analisar_alerta():
+    print("\n********* ANÁLISE DE ALERTAS ************")
+
+    encontrou_alerta = False
+
+    for modulo in dados["modulos"]:
+        if validar_alerta(modulo):
+            print(f"ALERTA: {modulo['nome']}:")
+            print(f"Status: {modulo['status']}")
+            print(F"Falha Crítica:{modulo['falha_critica']}")
+            encontrou_alerta = True
+    
+    if not encontrou_alerta:
+        print("Nenhum alerta encontrado.")
+
+def validar_alerta(modulo):
+    falha_critica = modulo["Falha critica"]
+    status_alerta = modulo["status"] == "alerta"
+
+    if falha_critica or status_alerta:
+        return True
+    
+    return False 
+
 print("==============================================")
 print("       NCSA - AURORA SIGER")
 print("       Núcleo Cognitivo da Colônia")
@@ -69,7 +93,7 @@ while opcao != "0":
         registrar_historico("Usuário consultou o histórico da Colônia.")
         consultar_historico()
     elif opcao == "3":
-        print("Análise de alertas selecionada.")
+        analisar_alerta(dados)
     elif opcao == "4":
         print("Validação lógica selecionada.")  
     elif opcao == "5":
