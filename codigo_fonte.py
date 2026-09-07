@@ -43,23 +43,46 @@ def analisar_alerta():
     encontrou_alerta = False
 
     for modulo in dados["modulos"]:
+
         if validar_alerta(modulo):
             print(f"ALERTA: {modulo['nome']}:")
             print(f"Status: {modulo['status']}")
-            print(F"Falha Crítica:{modulo['falha_critica']}")
+            print(f"Integridade: {modulo['integridade_percentual']}%")
+            print(f"Falha Crítica:{modulo['falha_critica']}")
+
             encontrou_alerta = True
     
     if not encontrou_alerta:
         print("Nenhum alerta encontrado.")
 
 def validar_alerta(modulo):
-    falha_critica = modulo["Falha critica"]
+    falha_critica = modulo["falha_critica"]
     status_alerta = modulo["status"] == "alerta"
+    integridade_baixa = modulo["integridade_percentual"] < 80
 
-    if falha_critica or status_alerta:
-        return True
+    risco = falha_critica or status_alerta or integridade_baixa
     
-    return False 
+    return risco
+
+def executar_validacao_logica():
+    print("\n********* VALIDAÇÃO LÓGICA ************")
+    
+    print("\nRegra utilizada")
+    print("RISCO = falha_critica OR status_alerta OR integridade_baixa")
+
+    for modulo in dados["modulos"]:
+
+        falha_critica = modulo["falha_critica"]
+        status_alerta = modulo["status"] == "alerta"
+        integridade_baixa = modulo["integridade_percentual"] < 80
+
+        risco = falha_critica or status_alerta or integridade_baixa
+
+        print(f"\nMódulo: {modulo['nome']}")
+        print(f"Falha Crítica: {falha_critica}")    
+        print(f"Status é alerta: {status_alerta}")
+        print(f"Integridade abaixo de 80%: {integridade_baixa}")
+        print(f"Resultado de risco: {risco}")
 
 print("==============================================")
 print("       NCSA - AURORA SIGER")
@@ -74,7 +97,7 @@ while opcao != "0":
     print()
     print("[1] Visualizar módulos")
     print("[2] Consultar histórico")
-    print("[3] Analisar alerta")
+    print("[3] Analisar alertas")
     print("[4] Executar validação lógica")
     print("[5] Exibir prompts")
     print("[6] Simular assistente IA")
@@ -93,9 +116,10 @@ while opcao != "0":
         registrar_historico("Usuário consultou o histórico da Colônia.")
         consultar_historico()
     elif opcao == "3":
-        analisar_alerta(dados)
+        analisar_alerta() 
     elif opcao == "4":
-        print("Validação lógica selecionada.")  
+        print("Validação lógica selecionada.")
+        executar_validacao_logica()
     elif opcao == "5":
         print("Exibição de prompts selecionada.")
     elif opcao == "6":

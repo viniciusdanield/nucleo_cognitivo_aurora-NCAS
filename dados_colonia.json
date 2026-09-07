@@ -139,9 +139,7 @@
             "integridade_percentual": 89,
             "falha_critica": false,
             "ultima_manutencao": "2026-08-10"
-        },
-        {
-            "alertas": []
         }
-    ]
+    ],
+        "alertas": []
 }
