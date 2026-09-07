@@ -9,21 +9,33 @@ with open("dados_colonia.json", "r", encoding="utf-8") as arquivo:
     dados = json.load(arquivo)
 nomes_modulos = [modulo["nome"] for modulo in dados["modulos"]]
 
-exibir_nome_modulos = lambda nomes: [print(f"- {nome}") for nome in nomes]
-
-
+with open("historico_colonia.txt", "a", encoding="utf-8") as arquivo:
+    arquivo.write("Sistema NCAS iniciado.\n")
+    
 # Exemplo de acesso a um dado específico:
 # primeiro_modulo = dados["modulos"][0]
 # print(primeiro_modulo["nome"])
 # print(primeiro_modulo["status"])
 
-    print("\n********* MÓDULOS DA COLÔNIA ************")
 
-    def exibir_modulos(nomes_modulos):
-        for nome in nomes_modulos:
-            print(f"- {nome}")
+def exibir_modulos(nomes_modulos):
+    print("\n********* MÓDULOS DA COLÔNIA ************")
     print("Dados da Colônia carregados com sucesso.")
     print("Quantidade de módulos: ", len(dados["modulos"]))
+
+    for nome in nomes_modulos:
+         print(f"- {nome}")
+def consultar_historico():
+    print("\n********* HISTÓRICO DA COLÔNIA ************")
+
+    with open("historico_colonia.txt", "r", encoding="utf-8") as arquivo:
+        historico = arquivo.read()
+
+    print(historico)
+
+def registrar_historico(mensagem):
+    with open("historico_colonia.txt", "a", encoding="utf-8") as arquivo:
+        arquivo.write(f"{mensagem}\n")
 
 print("==============================================")
 print("       NCSA - AURORA SIGER")
@@ -50,9 +62,12 @@ while opcao != "0":
 
     if opcao == "1":
         print("Visualização de módulos selecionada.")
+        registrar_historico("Usuário consultou os módulos da Colônia.")
         exibir_modulos(nomes_modulos)
     elif opcao == "2":
         print("Consulta de histórico selecionada.")
+        registrar_historico("Usuário consultou o histórico da Colônia.")
+        consultar_historico()
     elif opcao == "3":
         print("Análise de alertas selecionada.")
     elif opcao == "4":
@@ -67,6 +82,7 @@ while opcao != "0":
         print("Opção inválida. Por favor, escolha uma opção válida.")
 
     #print(dados) 
+
 
 
 
