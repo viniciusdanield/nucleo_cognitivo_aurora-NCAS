@@ -13,3 +13,15 @@ Sistema NCAS iniciado.
 Sistema NCAS iniciado.
 IA analisou o módulo Controle Termico - Risco: indentificado - Prioridade: critico
 IA analisou o módulo Oficina de Robotica - Risco: indentificado - Prioridade: medio
+Sistema NCAS iniciado.
+IA analisou o módulo Controle Termico - Risco: identificado - Prioridade: critico
+IA analisou o módulo Oficina de Robotica - Risco: identificado - Prioridade: medio
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Novo registro cadastrado: teste
+Novo registro cadastrado: teste
+Sistema NCAS iniciado.
+Novo registro cadastrado: teste
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Novo registro cadastrado: teste
