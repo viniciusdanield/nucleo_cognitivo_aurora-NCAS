@@ -64,6 +64,21 @@ def validar_alerta(modulo):
     
     return risco
 
+def mostrar_simplificacao():
+    print("\n*********** SIMPLIFICAÇÃO BOOLEANA ************")
+
+    print("\nExpressão original:")
+    print("R = (F AND A) OR (F AND NOT A) OR I")
+
+    print("\nAplicando distributividade:")
+    print("R = F AND (A OR NOT A) OR I")
+
+    print("\nPela lei do terceiro excluído:")
+    print("A OR NOT A = True")
+
+    print("\nExpressão simplificada:")
+    print("R = F OR I")
+
 def executar_validacao_logica():
     print("\n********* VALIDAÇÃO LÓGICA ************")
     
@@ -83,6 +98,48 @@ def executar_validacao_logica():
         print(f"Status é alerta: {status_alerta}")
         print(f"Integridade abaixo de 80%: {integridade_baixa}")
         print(f"Resultado de risco: {risco}")
+
+def exibir_prompts():
+    print("\n********* PROMPTS DO NCAS ************")
+
+    prompt_zero_shot = """ 
+Você é o assistente operacional da colônia Aurora Siger.
+Analise os dados fornecidos e identifique possíveis riscos operacionais.
+Apresente um resumo e uma recomendação de ação.   
+"""
+
+    prompt_few_shot = """
+Você é o assistente operacional da colônia Aurora Siger.
+
+Exemplo:
+Entrada: módulo com integridade de 70%.
+Saída: risco identificado devido à baixa integridade.
+
+Agora analise os dados dos módulos da colônia
+e identifique situações que exigem atenção.
+"""
+    prompt_estruturado = """
+Analise os dados operacionais da colônia e responda
+utilizando a seguinte estrutura:
+
+{
+    "prioridade": "",
+    "risco": "",
+    "resumo": "",
+    "recomendacao": "",
+    "acao_humana": ""
+}
+"""
+    print("\nPrompt Zero-Shot:")
+    print(prompt_zero_shot)
+
+    print("\nPrompt Few-Shot:")
+    print(prompt_few_shot)
+
+    print("\nPrompt Estruturado:")
+    print(prompt_estruturado)
+
+
 
 print("==============================================")
 print("       NCSA - AURORA SIGER")
@@ -120,8 +177,9 @@ while opcao != "0":
     elif opcao == "4":
         print("Validação lógica selecionada.")
         executar_validacao_logica()
+        mostrar_simplificacao()
     elif opcao == "5":
-        print("Exibição de prompts selecionada.")
+        exibir_prompts()
     elif opcao == "6":
         print("Simulação de assistente IA selecionada.")
     elif opcao == "0":
