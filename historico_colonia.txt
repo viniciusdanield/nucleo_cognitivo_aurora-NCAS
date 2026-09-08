@@ -6,3 +6,10 @@ Sistema NCAS iniciado.
 Sistema NCAS iniciado.
 Sistema NCAS iniciado.
 Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+IA analisou o módulo Controle Termico - Risco: indentificado - Prioridade: critico
+IA analisou o módulo Oficina de Robotica - Risco: indentificado - Prioridade: medio

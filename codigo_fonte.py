@@ -64,21 +64,6 @@ def validar_alerta(modulo):
     
     return risco
 
-def mostrar_simplificacao():
-    print("\n*********** SIMPLIFICAÇÃO BOOLEANA ************")
-
-    print("\nExpressão original:")
-    print("R = (F AND A) OR (F AND NOT A) OR I")
-
-    print("\nAplicando distributividade:")
-    print("R = F AND (A OR NOT A) OR I")
-
-    print("\nPela lei do terceiro excluído:")
-    print("A OR NOT A = True")
-
-    print("\nExpressão simplificada:")
-    print("R = F OR I")
-
 def executar_validacao_logica():
     print("\n********* VALIDAÇÃO LÓGICA ************")
     
@@ -140,40 +125,50 @@ utilizando a seguinte estrutura:
     print(prompt_estruturado)
 
 def simular_assistente_ia():
-    print("\n********* SIMULAÇÃO DE ASSISTENTE IA ************")
+    print("\n********* ASSISTENTE IA - NCAS************")
 
-    alertas = []
+    resposta_ia = []
 
     for modulo in dados["modulos"]:
+
         if validar_alerta(modulo):
-            alerta = {
+
+            if modulo["integridade_percentual"] < 80:
+                recomendacao = "Realizar inspeção e manutenção do módulo."
+            elif modulo["status"] == "alerta":
+                recomendacao = "Verificar as condições operacionais do módulo."
+            else:
+                recomendacao = "Monitorar o módulo."
+
+            analise = {
                 "modulo": modulo["nome"],
                 "prioridade": modulo["nivel_importancia"],
-                "status": modulo["status"],
-                "integridade": modulo["integridade_percentual"],
-                "risco": "Identificado"
+                "risco": "Identificado",
+                "resumo": f"O módulo apresenta uma condição que exige atenção.",
+                "recomendacao": recomendacao,
+                "acao_humana": "Verificar o módulo e tomar as medidas necessárias."
             }
 
-            alertas.append(alerta)
-    if not alertas:
+            resposta_ia.append(analise)
+
+            registrar_historico(
+                f"IA analisou o módulo {modulo['nome']} - "
+                f"Risco: identificado - "
+                f"Prioridade: {modulo['nivel_importancia']}"
+            )
+
+    if not resposta_ia:
         print("\nNenhum risco operacional identificado.")
         return
 
     
-    print("\nAnálise simulada da IA:")
+    print("\nResposta estruturada do assistente IA:")
 
-    for alerta in alertas:
-        print(f"\nMódulo: {alerta['modulo']}")
-        print(f"Prioridade: {alerta['prioridade']}")
-        print(f"Risco: {alerta['risco']}")
-        print(f"Status: {alerta['status']}")
-        print(f"Integridade: {alerta['integridade']}%")
-
-        if alerta["integridade"] < 80:
-            print("Recomendação: Realizar inspeção e manutenção do módulo.")
-        elif alerta["status"] == "alerta":
-            print("Recomendação: Verificar as condições operacionais do módulo.")
-
+    print(json.dumps(
+        resposta_ia,
+        indent=4,
+        ensure_ascii=False
+    ))
 
 
 print("==============================================")
@@ -201,7 +196,6 @@ while opcao != "0":
 
     if opcao == "1":
         print("Visualização de módulos selecionada.")
-        registrar_historico("Usuário consultou os módulos da Colônia.")
         exibir_modulos(nomes_modulos)
     elif opcao == "2":
         print("Consulta de histórico selecionada.")
@@ -212,7 +206,6 @@ while opcao != "0":
     elif opcao == "4":
         print("Validação lógica selecionada.")
         executar_validacao_logica()
-        mostrar_simplificacao()
     elif opcao == "5":
         exibir_prompts()
     elif opcao == "6":
@@ -221,8 +214,6 @@ while opcao != "0":
         print("Encerrando o NCAS...")
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
-
-    #print(dados) 
 
 
 
