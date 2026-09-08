@@ -139,6 +139,41 @@ utilizando a seguinte estrutura:
     print("\nPrompt Estruturado:")
     print(prompt_estruturado)
 
+def simular_assistente_ia():
+    print("\n********* SIMULAÇÃO DE ASSISTENTE IA ************")
+
+    alertas = []
+
+    for modulo in dados["modulos"]:
+        if validar_alerta(modulo):
+            alerta = {
+                "modulo": modulo["nome"],
+                "prioridade": modulo["nivel_importancia"],
+                "status": modulo["status"],
+                "integridade": modulo["integridade_percentual"],
+                "risco": "Identificado"
+            }
+
+            alertas.append(alerta)
+    if not alertas:
+        print("\nNenhum risco operacional identificado.")
+        return
+
+    
+    print("\nAnálise simulada da IA:")
+
+    for alerta in alertas:
+        print(f"\nMódulo: {alerta['modulo']}")
+        print(f"Prioridade: {alerta['prioridade']}")
+        print(f"Risco: {alerta['risco']}")
+        print(f"Status: {alerta['status']}")
+        print(f"Integridade: {alerta['integridade']}%")
+
+        if alerta["integridade"] < 80:
+            print("Recomendação: Realizar inspeção e manutenção do módulo.")
+        elif alerta["status"] == "alerta":
+            print("Recomendação: Verificar as condições operacionais do módulo.")
+
 
 
 print("==============================================")
@@ -181,7 +216,7 @@ while opcao != "0":
     elif opcao == "5":
         exibir_prompts()
     elif opcao == "6":
-        print("Simulação de assistente IA selecionada.")
+        simular_assistente_ia()
     elif opcao == "0":
         print("Encerrando o NCAS...")
     else:
