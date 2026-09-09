@@ -28,7 +28,7 @@ def exibir_modulos():
 def consultar_historico():
     print("\n********* HISTÓRICO DA COLÔNIA ************")
 
-    with open("historico_colonia.txt", "r", encoding="utf-8") as arquivo:
+    with open("registros_colonia.txt", "r", encoding="utf-8") as arquivo:
         historico = arquivo.read()
 
     print(historico)
