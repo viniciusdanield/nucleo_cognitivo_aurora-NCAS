@@ -361,12 +361,13 @@ A implementação pode ser expandida futuramente com:
 
 ## Autor
 
-## Integrantes
-# Nome: ANA CAROLINA FREIRE MAFRA – rm573650
-# Nome: Daniel Guimarães Barreto – rm573425
-# Nome: Paulo Henrique da Silva Gola – rm572992
-# Nome: Vinicius Daniel de Borba – rm572091
-# Nome: Vitor de Araujo Ferreira – rm572838
+```bash
+Integrantes
+Nome: ANA CAROLINA FREIRE MAFRA – rm573650
+Nome: Daniel Guimarães Barreto – rm573425
+Nome: Paulo Henrique da Silva Gola – rm572992
+Nome: Vinicius Daniel de Borba – rm572091
+Nome: Vitor de Araujo Ferreira – rm572838
 
 ---
 
