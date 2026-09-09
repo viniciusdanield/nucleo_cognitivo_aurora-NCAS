@@ -31,3 +31,9 @@ IA analisou o módulo Controle Termico - Risco: identificado - Prioridade: criti
 IA analisou o módulo Oficina de Robotica - Risco: identificado - Prioridade: medio
 IA analisou o módulo teste - Risco: identificado - Prioridade: alto
 Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+Novo registro cadastrado: teste
+Sistema NCAS iniciado.
+Sistema NCAS iniciado.
+IA analisou o módulo Controle Termico - Risco: identificado - Prioridade: critico
+IA analisou o módulo Oficina de Robotica - Risco: identificado - Prioridade: medio

@@ -139,20 +139,6 @@
             "integridade_percentual": 89,
             "falha_critica": false,
             "ultima_manutencao": "2026-08-10"
-        },
-        {
-            "nome": "teste",
-            "categoria": "teste",
-            "setor": "comunicao",
-            "status": "ativo",
-            "nivel_importancia": "alto",
-            "consumo_percentual": 80.0,
-            "capacidade_percentual": 75.0,
-            "temperatura": 15.0,
-            "pressao": null,
-            "integridade_percentual": 10.0,
-            "falha_critica": true,
-            "ultima_manutencao": "09/08/2026"
         }
     ],
     "alertas": []
