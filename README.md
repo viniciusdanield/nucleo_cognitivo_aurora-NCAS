@@ -320,57 +320,6 @@ NCAS/
 ├── link_video.txt
 └── README.md
 ```
-
-> O diretório `.venv/` não deve ser versionado.
-
----
-
-## Git e segurança
-
-Antes de publicar o projeto, revise:
-
-```text
-.env
-*.key
-*.pem
-*.token
-credentials*
-secrets*
-.venv/
-__pycache__/
-```
-
-Um `.gitignore` recomendado:
-
-```gitignore
-.venv/
-__pycache__/
-*.pyc
-.env
-*.key
-*.pem
-*.token
-credentials*
-secrets*
-```
-
-### Importante sobre o Ollama
-
-O uso do Ollama local significa que o código não precisa conter uma chave de API para consultar o modelo.
-
-Ainda assim, **não significa que qualquer conteúdo do projeto seja automaticamente seguro para publicação**. Antes do GitHub, revise os arquivos JSON/TXT e remova:
-
-- dados pessoais;
-- credenciais;
-- tokens;
-- IPs internos reais;
-- nomes de pessoas;
-- informações corporativas;
-- URLs internas;
-- configurações ou dados pertencentes à empresa.
-
-Para um projeto acadêmico, prefira dados totalmente fictícios.
-
 ---
 
 ## Contexto acadêmico
